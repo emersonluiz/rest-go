@@ -25,6 +25,7 @@ func init() {
 func main() {
     app := gin.Default()
     app.Use(middlewares.Connect)
+    app.Use(middlewares.CORSMiddleware())
     app.GET("/", index)
     app.POST("/persons", persons.Create)
     app.GET("/persons", persons.List)
